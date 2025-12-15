@@ -14,7 +14,7 @@ public class FactoryTest
     @Test
     public void CreerAdditif()
     {
-        Element additif1 = ElementFactory.getElement(TypeElement.Additif, "Additif", 10, Unite.Milli_grammes);
+        Element additif1 = elementFactory.getElement(TypeElement.Additif, "Additif", 10, Unite.Milli_grammes);
         Element additif2 = new Additif("Additif", 10, Unite.Milli_grammes);
 
         assertEquals(additif2, additif1);
@@ -23,7 +23,7 @@ public class FactoryTest
     @Test
     public void CreerIngredient()
     {
-        Element ingredient1 = ElementFactory.getElement(TypeElement.Ingredient, "Ingredient", 10, Unite.Milli_grammes);
+        Element ingredient1 = elementFactory.getElement(TypeElement.Ingredient, "Ingredient", 10, Unite.Milli_grammes);
         Element ingredient2 = new Ingredient("Ingredient", 10, Unite.Milli_grammes);
 
         assertEquals(ingredient2, ingredient1);
@@ -32,7 +32,7 @@ public class FactoryTest
     @Test
     public void CreerAllergene()
     {
-        Element allergene1 = ElementFactory.getElement(TypeElement.Allergene, "Allergene", 10, Unite.Milli_grammes);
+        Element allergene1 = elementFactory.getElement(TypeElement.Allergene, "Allergene", 10, Unite.Milli_grammes);
         Element allergene2 = new Allergene("Allergene", 10, Unite.Milli_grammes);
 
         assertEquals(allergene2, allergene1);
