@@ -1,4 +1,4 @@
-package fr.diginamic.entite;
+package fr.diginamic.entite.element;
 
 public abstract class Element {
 

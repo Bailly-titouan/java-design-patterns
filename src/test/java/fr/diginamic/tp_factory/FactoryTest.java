@@ -2,7 +2,7 @@ package fr.diginamic.tp_factory;
 
 import static org.junit.Assert.*;
 
-import fr.diginamic.entite.*;
+import fr.diginamic.entite.element.*;
 import fr.diginamic.factory.ElementFactory;
 import fr.diginamic.factory.IElementFactory;
 import org.junit.Test;

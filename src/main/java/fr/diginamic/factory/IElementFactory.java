@@ -1,8 +1,8 @@
 package fr.diginamic.factory;
 
-import fr.diginamic.entite.Element;
-import fr.diginamic.entite.TypeElement;
-import fr.diginamic.entite.Unite;
+import fr.diginamic.entite.element.Element;
+import fr.diginamic.entite.element.TypeElement;
+import fr.diginamic.entite.element.Unite;
 
 public interface IElementFactory
 {

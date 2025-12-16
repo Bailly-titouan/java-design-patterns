@@ -1,4 +1,4 @@
-package fr.diginamic.entite;
+package fr.diginamic.entite.element;
 
 public class Additif extends Element {
     public Additif(String nom, double value, Unite unite)

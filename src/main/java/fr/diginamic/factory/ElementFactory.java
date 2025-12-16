@@ -1,6 +1,6 @@
 package fr.diginamic.factory;
 
-import fr.diginamic.entite.*;
+import fr.diginamic.entite.element.*;
 
 public class ElementFactory implements IElementFactory
 {

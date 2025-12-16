@@ -1,4 +1,4 @@
-package fr.diginamic.entite;
+package fr.diginamic.entite.element;
 
 public enum TypeElement
 {

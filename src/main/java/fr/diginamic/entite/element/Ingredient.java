@@ -1,4 +1,4 @@
-package fr.diginamic.entite;
+package fr.diginamic.entite.element;
 
 public class Ingredient extends Element {
     public Ingredient(String nom, double value, Unite unite)

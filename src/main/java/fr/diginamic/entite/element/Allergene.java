@@ -1,4 +1,4 @@
-package fr.diginamic.entite;
+package fr.diginamic.entite.element;
 
 public class Allergene extends Element {
     public Allergene(String nom, double value, Unite unite)
