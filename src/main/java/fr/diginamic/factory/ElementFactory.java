@@ -5,6 +5,11 @@ import fr.diginamic.entite.*;
 public class ElementFactory implements IElementFactory
 {
     public Element getElement(TypeElement type, String nom, double valeur, Unite unite) {
+        if (type == null)
+        {
+            return null;
+        }
+
         switch (type) {
             case Additif:
                 return new Additif(nom, valeur, unite);

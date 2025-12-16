@@ -37,4 +37,11 @@ public class FactoryTest
 
         assertEquals(allergene2, allergene1);
     }
+
+    @Test
+    public void CreerNullElement()
+    {
+        Element element = elementFactory.getElement(null, "Allergene", 10, Unite.Milli_grammes);
+        assertNull(element);
+    }
 }
