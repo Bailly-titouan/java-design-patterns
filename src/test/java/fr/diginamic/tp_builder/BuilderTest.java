@@ -8,15 +8,16 @@ import fr.diginamic.entite.element.*;
 import fr.diginamic.exception.ProduitException;
 import fr.diginamic.factory.ElementFactory;
 import fr.diginamic.factory.IElementFactory;
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.internal.runners.statements.ExpectException;
+import org.junit.rules.ExpectedException;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
 public class BuilderTest
 {
     private static final IElementFactory elementFactory = new ElementFactory();
-
 
     @Test
     public void testCreerValideProduct()
@@ -58,17 +59,7 @@ public class BuilderTest
                 .appendCategorie("Categorie")
                 .appendGrade("Grade");
 
-        String errorMessage = "";
-        String wantedMessage = "Marque manquante !";
-
-        try
-        {
-            Produit produit = produitBuilder.get();
-        } catch (ProduitException e) {
-            errorMessage = e.getMessage();
-        }
-
-        assertEquals(wantedMessage, errorMessage);
+        assertThrows(ProduitException.class, produitBuilder::get);
     }
 
     @Test
@@ -83,17 +74,7 @@ public class BuilderTest
 //                .appendCategorie("Categorie")
                 .appendGrade("Grade");
 
-        String errorMessage = "";
-        String wantedMessage = "Catégorie manquante !";
-
-        try
-        {
-            Produit produit = produitBuilder.get();
-        } catch (ProduitException e) {
-            errorMessage = e.getMessage();
-        }
-
-        assertEquals(wantedMessage, errorMessage);
+        assertThrows(ProduitException.class, produitBuilder::get);
     }
 
     @Test
@@ -107,25 +88,9 @@ public class BuilderTest
                 .appendCategorie("Categorie")
                 .appendGrade("Grade");
 
-        String errorMessage = "";
-        String wantedMessage = "Nom manquant ou vide !";
-
-        try
-        {
-            Produit produit = produitBuilder.get();
-        } catch (ProduitException e) {
-            errorMessage = e.getMessage();
-        }
-        assertEquals(wantedMessage, errorMessage);
-
+        assertThrows(ProduitException.class, produitBuilder::get);
         produitBuilder.appendNom("");
-        try
-        {
-            Produit produit = produitBuilder.get();
-        } catch (ProduitException e) {
-            errorMessage = e.getMessage();
-        }
-        assertEquals(wantedMessage, errorMessage);
+        assertThrows(ProduitException.class, produitBuilder::get);
     }
 
     @Test
@@ -139,25 +104,8 @@ public class BuilderTest
                 .appendAllergene("Allergene", 30)
                 .appendCategorie("Categorie");
 //                .appendGrade("Grade");
-
-        String errorMessage = "";
-        String wantedMessage = "Grade manquant ou vide !";
-
-        try
-        {
-            Produit produit = produitBuilder.get();
-        } catch (ProduitException e) {
-            errorMessage = e.getMessage();
-        }
-        assertEquals(wantedMessage, errorMessage);
-
-        produitBuilder.appendGrade("Grade");
-        try
-        {
-            Produit produit = produitBuilder.get();
-        } catch (ProduitException e) {
-            errorMessage = e.getMessage();
-        }
-        assertEquals(wantedMessage, errorMessage);
+        assertThrows(ProduitException.class, produitBuilder::get);
+        produitBuilder.appendGrade("");
+        assertThrows(ProduitException.class, produitBuilder::get);
     }
 }
